@@ -15,6 +15,7 @@ import java.util.List;
 
 public class Day4_PresentToZeroOnes {
     private static final String SPACE = " ";
+    private static final String NEW_LINE = "\n";
 
     public static void main(String[] args) {
 
@@ -27,7 +28,7 @@ public class Day4_PresentToZeroOnes {
             for (char character : idea.toCharArray()) {
                 System.out.print(Integer.toBinaryString(character) + SPACE);
             }
-            System.out.print("\n");
+            System.out.print(NEW_LINE);
         });
     }
 }
