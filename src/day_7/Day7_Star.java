@@ -28,6 +28,11 @@ public class Day7_Star {
     }
 
     private static void drawStar(int size) {
+        if (size < 5) {
+            System.out.println("Nie będzie z tego gwiazdki :(");
+            return;
+        }
+
         int numberOfSpacesInFrontOfArm = 0;
         int numberOfSpacesBetweenTwoArmsOfStar = size * CENTER_OF_STAR - MINIMAL_SPACE_BETWEEN_ARMS;
 
