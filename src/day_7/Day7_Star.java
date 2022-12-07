@@ -19,6 +19,7 @@ public class Day7_Star {
     private static final String EMPTY_SPACE = " ";
     private static final String PART_OF_STAR = "*";
     private static final Integer NUMBER_OF_SPACES_ON_NEXT_LEVEL_OF_STAR = 4;
+    private static final Integer MINIMAL_SPACE_BETWEEN_ARMS = 3;
     private static final Integer CENTER_OF_STAR = 2;
 
     public static void main(String[] args) {
@@ -28,9 +29,9 @@ public class Day7_Star {
 
     private static void drawStar(int size) {
         int numberOfSpacesInFrontOfArm = 0;
-        int numberOfSpacesBetweenTwoArmsOfStar = size * CENTER_OF_STAR - NUMBER_OF_SPACES_ON_NEXT_LEVEL_OF_STAR;
-        for (int i = 0; i < size; i++) {
+        int numberOfSpacesBetweenTwoArmsOfStar = size * CENTER_OF_STAR - MINIMAL_SPACE_BETWEEN_ARMS;
 
+        for (int i = 0; i < size; i++) {
             if (i < size / CENTER_OF_STAR) {
                 drawEmptySpaces(numberOfSpacesInFrontOfArm);
                 drawStarParts(numberOfSpacesInFrontOfArm, numberOfSpacesBetweenTwoArmsOfStar);
@@ -56,7 +57,9 @@ public class Day7_Star {
     private static void drawStarParts(int numberOfSpacesInFrontOfArm, int numberOfSpacesBetweenTwoArmsOfStar) {
         drawEmptySpaces(numberOfSpacesInFrontOfArm);
         System.out.print(PART_OF_STAR);
-        drawEmptySpaces(numberOfSpacesBetweenTwoArmsOfStar);
+        drawEmptySpaces(numberOfSpacesBetweenTwoArmsOfStar / CENTER_OF_STAR);
+        System.out.print(PART_OF_STAR);
+        drawEmptySpaces(numberOfSpacesBetweenTwoArmsOfStar / CENTER_OF_STAR);
         System.out.println(PART_OF_STAR);
     }
 
