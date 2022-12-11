@@ -10,6 +10,8 @@ import java.util.List;
 
 public class Day11_ChooseEnvelope {
 
+    private static final String SEPARATOR = " - ";
+
     public static void main(String[] args) {
         List<Gift> gifts = prepareGifts();
 
@@ -17,16 +19,19 @@ public class Day11_ChooseEnvelope {
         Envelope medium = new Envelope(20, 30);
         Envelope big = new Envelope(30, 30);
 
+
         gifts.forEach(gift -> {
+            String size;
             if (gift.height() <= small.height() && gift.width() <= small.width()) {
-                System.out.println(gift.name() + " - small");
+                size = "small";
             } else if (gift.height() <= medium.height() && gift.width() <= medium.width()) {
-                System.out.println(gift.name() + " - medium");
+                size = "medium";
             } else if (gift.height() <= big.height() && gift.width() <= big.width()) {
-                System.out.println(gift.name() + " - big");
+                size = "big";
             } else {
-                System.out.println(gift.name() + " - nie zmieści się do żadnej koperty :(");
+                size = "nie zmieści się do żadnej koperty :(";
             }
+            System.out.println(gift.name() + SEPARATOR + size);
         });
     }
 
