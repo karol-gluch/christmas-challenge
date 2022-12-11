@@ -22,11 +22,14 @@ public class Day11_ChooseEnvelope {
 
         gifts.forEach(gift -> {
             String size;
-            if (gift.height() <= small.height() && gift.width() <= small.width()) {
+            if ((gift.height() <= small.height() && gift.width() <= small.width())
+                    || (gift.height() <= small.width() && gift.width() <= small.height())) {
                 size = "small";
-            } else if (gift.height() <= medium.height() && gift.width() <= medium.width()) {
+            } else if ((gift.height() <= medium.height() && gift.width() <= medium.width())
+                    || (gift.height() <= medium.width() && gift.width() <= medium.height())) {
                 size = "medium";
-            } else if (gift.height() <= big.height() && gift.width() <= big.width()) {
+            } else if ((gift.height() <= big.height() && gift.width() <= big.width())
+                    || (gift.height() <= big.width() && gift.width() <= big.height())) {
                 size = "big";
             } else {
                 size = "nie zmieści się do żadnej koperty :(";
