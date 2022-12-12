@@ -23,7 +23,7 @@ public class Day9_VowelsCount {
         int numberOfVowels = 0;
 
         for (Address address : addresses) {
-            String fullAddress = (address.getCity() + address.getStreet() + address.getNumber()).toLowerCase();
+            String fullAddress = (address.city() + address.street() + address.number()).toLowerCase();
             for (Character characterFromAddress : fullAddress.toCharArray()) {
                 if (vowels.contains(characterFromAddress)) {
                     numberOfVowels++;

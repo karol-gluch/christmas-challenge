@@ -18,7 +18,7 @@ public class Day5_SortAdresses {
     public static void main(String[] args) {
 
         List<Address> addresses = prepareAddresses();
-        addresses.stream().sorted(Comparator.comparing(Address::getCity)).forEach(System.out::println);
+        addresses.stream().sorted(Comparator.comparing(Address::city)).forEach(System.out::println);
     }
 
     private static List<Address> prepareAddresses() {
